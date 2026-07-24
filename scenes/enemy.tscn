@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bg1f7q5hjhyjb"]
+
+[ext_resource type="Texture2D" uid="uid://diyg8q0jg8ba4" path="res://assets/textures/enemyRed2.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://djjdkx0mjt4ib" path="res://scripts/enemy.gd" id="1_md0e3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4pg6"]
+radius = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp5gf"]
+size = Vector2(83, 7)
+
+[node name="enemy" type="Area2D" unique_id=375607424]
+rotation = 1.5707964
+script = ExtResource("1_md0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1218888536]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1390990784]
+shape = SubResource("CircleShape2D_a4pg6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=325400992]
+position = Vector2(8.742278e-08, -9)
+shape = SubResource("RectangleShape2D_jp5gf")
