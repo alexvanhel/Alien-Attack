@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal took_damage
+
 var speed = 300
 
 # you can comment the following line and do it inside shoot()
@@ -59,3 +61,9 @@ func shoot():
 	laser_container.add_child(laser_instance)
 	laser_instance.global_position = global_position
 	laser_instance.global_position.x += 75
+
+func take_damage():
+	emit_signal("took_damage")
+
+func die():
+	queue_free()
