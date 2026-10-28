@@ -11,6 +11,8 @@ size = Vector2(83, 7)
 
 [node name="enemy" type="Area2D" unique_id=375607424]
 rotation = 1.5707964
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1218888536]
