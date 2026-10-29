@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://csoweooe0pt71" path="res://assets/audio/sfx_twoTone.ogg" id="6_gee14"]
 [ext_resource type="AudioStream" uid="uid://oxgiorcunrfy" path="res://assets/audio/sfx_shieldDown.ogg" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://c5bb6h30cmf41" path="res://assets/audio/sfx_laser1.ogg" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://dmc8e508q3oei" path="res://scenes/path_enemy.tscn" id="9_0tnpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3scdg"]
 size = Vector2(128, 900)
@@ -48,8 +47,7 @@ stream = ExtResource("6_p57ef")
 [node name="PlayerHurtSound" type="AudioStreamPlayer" parent="." unique_id=1457803542]
 stream = ExtResource("6_gee14")
 
-[node name="PathEnemy" parent="." unique_id=1799465167 instance=ExtResource("9_0tnpc")]
-
 [connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
 [connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]
+[connection signal="path_enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_path_enemy_spawned"]
 [connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]
