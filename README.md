@@ -85,7 +85,7 @@ Through this project, I aim to improve my understanding of:
 
 ## Status
 
-**In Development**
+**Completed**
 
-This project is part of my game development learning journey. Its features, mechanics, and overall polish will evolve as I continue working through the course and experimenting with Godot.
+This project is complete. It was developed while learning Godot 4 and following the GameDev.tv course, providing hands-on experience with GDScript, scene management, collision detection, enemy behavior, user interfaces, and other game development fundamentals.
 
