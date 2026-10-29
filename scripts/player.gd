@@ -10,6 +10,8 @@ var laser_scene = preload("res://scenes/laser.tscn")
 # you can do this instead of doing it inside _ready()
 @onready var laser_container = $LaserContainer
 
+@onready var laser_sound = $LaserSound
+
 #var laser_container
 #func _ready() -> void:
 	#laser_container = get_node("LaserContainer")
@@ -61,6 +63,7 @@ func shoot():
 	laser_container.add_child(laser_instance)
 	laser_instance.global_position = global_position
 	laser_instance.global_position.x += 75
+	laser_sound.play()
 
 func take_damage():
 	emit_signal("took_damage")

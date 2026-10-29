@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b7lmk22dje5vw" path="res://scenes/hud.tscn" id="2_iywne"]
 [ext_resource type="PackedScene" uid="uid://dqfyf266ojh0n" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://doa0swulda2sw" path="res://scenes/enemy_spawner.tscn" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://csoweooe0pt71" path="res://assets/audio/sfx_twoTone.ogg" id="6_gee14"]
+[ext_resource type="AudioStream" uid="uid://oxgiorcunrfy" path="res://assets/audio/sfx_shieldDown.ogg" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://c5bb6h30cmf41" path="res://assets/audio/sfx_laser1.ogg" id="7_u5sy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3scdg"]
 size = Vector2(128, 900)
@@ -25,6 +28,9 @@ stretch_mode = 1
 [node name="Player" parent="." unique_id=168904727 instance=ExtResource("2_yqjtg")]
 position = Vector2(95, 370)
 
+[node name="LaserSound" type="AudioStreamPlayer" parent="Player" unique_id=806625538]
+stream = ExtResource("7_u5sy4")
+
 [node name="EnemySpawner" parent="." unique_id=709921547 instance=ExtResource("4_lbhrr")]
 
 [node name="Deathzone" type="Area2D" parent="." unique_id=156157149]
@@ -34,6 +40,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone" unique_id=1357903041]
 position = Vector2(-128, 360)
 shape = SubResource("RectangleShape2D_3scdg")
+
+[node name="EnemyHitSound" type="AudioStreamPlayer" parent="." unique_id=467552151]
+stream = ExtResource("6_p57ef")
+
+[node name="PlayerHurtSound" type="AudioStreamPlayer" parent="." unique_id=1457803542]
+stream = ExtResource("6_gee14")
 
 [connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
 [connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]
